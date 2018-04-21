@@ -8,8 +8,9 @@
     <title>Document</title>
 
     <style>
-        #box1,#box2{width: 100px;height: 100px;background: red;filter:alpha(opacity:80);opacity:0.8;}
-        #box2{background: blue;}
+        #box1,#box2,box3{width: 100px;height: 100px;background: darkcyan;filter:alpha(opacity:80);opacity:0.8;}
+        #box2{background: darkorange;}
+        #box3{background: darkslategray;}
     </style>
     <script src="./js/mulAnimation.js"></script>
 
@@ -17,22 +18,33 @@
 <body>
 
 <div id='box1'></div>
+<br>
+<br>
 <div id='box2'></div>
+<br>
+<br>
+<div id='box3'></div>
 <script>
     var box1=document.getElementById('box1');
     var box2=document.getElementById('box2');
 
     box1.onmouseover=function(){
-        mulAnimation(box1,{width:600,height:300,opacity:100});
+        mulAnimation(box1,{width:600,height:200,opacity:100});
     };
     box1.onmouseout=function(){
-        mulAnimation(box1,{width:150,height:100,opacity:70});
+        mulAnimation(box1,{width:150,height:100,opacity:60});
     };
     box2.onmouseover=function(){
-        mulAnimation(box2,{width:600,height:300,opacity:100});
+        mulAnimation(box2,{width:600,height:200,opacity:100});
     };
     box2.onmouseout=function(){
-        mulAnimation(box2,{width:150,height:100,opacity:70});
+        mulAnimation(box2,{width:150,height:100,opacity:60});
+    };
+    box3.onmouseover=function(){
+        mulAnimation(box2,{width:600,height:200,opacity:100});
+    };
+    box3.onmouseout=function(){
+        mulAnimation(box2,{width:150,height:100,opacity:60});
     };
 </script>
 </body>
