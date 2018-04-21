@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        #box1,#box2{width: 100px;height: 100px;background: red;filter:alpha(opacity:80);opacity:0.8;}
+        #box2{background: blue;}
+    </style>
+    <script src="./js/mulAnimation.js"></script>
+
+</head>
+<body>
+
+<div id='box1'></div>
+<div id='box2'></div>
+<script>
+    var box1=document.getElementById('box1');
+    var box2=document.getElementById('box2');
+
+    box1.onmouseover=function(){
+        mulAnimation(box1,{width:600,height:300,opacity:100});
+    };
+    box1.onmouseout=function(){
+        mulAnimation(box1,{width:150,height:100,opacity:70});
+    };
+    box2.onmouseover=function(){
+        mulAnimation(box2,{width:600,height:300,opacity:100});
+    };
+    box2.onmouseout=function(){
+        mulAnimation(box2,{width:150,height:100,opacity:70});
+    };
+</script>
+</body>
+</html>
