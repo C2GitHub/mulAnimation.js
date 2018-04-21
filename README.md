@@ -1,37 +1,47 @@
-## Welcome to GitHub Pages
+# `mulAnimation.js`缓动动画框架(多属性，兼容opacity)
 
-You can use the [editor on GitHub](https://github.com/C2GitHub/mulAnimation.js/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+##`mulAnimation.js`缓动动画框架插件使用介绍
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+#### 点击[mulAnimation.js](https://c2github.github.io/mulAnimation.js/)进行测试
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+### 页面插件引用
+```javascript
+<script src="./js/mulAnimation.js"></script>
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### html页面框架布局示例
 
-### Jekyll Themes
+> * 页面增加demo盒子，box1和box2
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/C2GitHub/mulAnimation.js/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+```javascript
+<div id='box1'></div>
+<div id='box2'></div>
+```
+### stlye样式示例
 
-### Support or Contact
+```javascript
+ #box1,#box2{width: 100px;height: 100px;background: red;filter:alpha(opacity:80);opacity:0.8;}
+ #box2{background: blue;}
+```
+### script使用示例
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+```javascript
+    <script>
+         var box1=document.getElementById('box1');
+         var box2=document.getElementById('box2');
+
+         box1.onmouseover=function(){
+             mulAnimation(box1,{width:600,height:300,opacity:100});
+         };
+         box1.onmouseout=function(){
+             mulAnimation(box1,{width:150,height:100,opacity:70});
+         };
+         box2.onmouseover=function(){
+             mulAnimation(box2,{width:600,height:300,opacity:100});
+         };
+         box2.onmouseout=function(){
+             mulAnimation(box2,{width:150,height:100,opacity:70});
+         };
+    </script>
+```
+
